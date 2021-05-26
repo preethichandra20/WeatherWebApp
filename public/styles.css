@@ -52,7 +52,7 @@ body{
   }
   @media (max-width: 575.98px) {
       .nextdata .card{
-          margin-left:auto;
+          margin-left:22%;
       }
   }
 .card img{
