@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 const dotenv = require('dotenv');
 dotenv.config();
-const port=process.env.port;
+const port=process.env.PORT;
 const key1=process.env.key1;
 const key2=process.env.key2;
 app.get("/",function(req,res){
