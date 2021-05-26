@@ -50,9 +50,14 @@ body{
   .header-right {
     float: right;
   }
-  @media (max-width: 575.98px) {
+  @media (max-width:414px) {
       .nextdata .card{
           margin-left:18%;
+      }
+  }
+  @media (max-width:1024px){
+      .card{
+          width:12rem;
       }
   }
 .card img{
