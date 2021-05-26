@@ -12,12 +12,16 @@ dotenv.config();
 const port=process.env.PORT;
 const key1=process.env.key1;
 const key2=process.env.key2;
+var city,day,week,currentData,mintemp=[],maxtemp=[],humidity=[],pressure=[],icon=[],description=[];
 app.get("/",function(req,res){
-    flag=0;
     res.render("city");
 })
+app.get("/city",function(req,res){
+    res.render("report",{city:city,day:day,week:week,currentData:currentData,
+        mintemp:mintemp,maxtemp:maxtemp,humidity:humidity,pressure:pressure,icon:icon,description:description})
+})
 app.post("/",function(req,res){
-    const city=req.body.city;
+    city=req.body.city;
     const url="http://api.positionstack.com/v1/forward?access_key="+key1+"&query="+city+"&limit=1&output=json";
     http.get(url,function(response){
         //console.log(response.statusCode);
@@ -41,8 +45,7 @@ app.post("/",function(req,res){
                 //console.log(resp.statusCode);
                 resp.on("data",function(data){
                     const weatherData=JSON.parse(data);
-                    var mintemp=[],maxtemp=[],humidity=[],description=[],pressure=[],icon=[];
-                    const currentData={
+                    currentData={
                             temp:weatherData.current.temp,
                             pressure:weatherData.current.pressure,
                             humidity:weatherData.current.humidity,
@@ -59,12 +62,11 @@ app.post("/",function(req,res){
                         description.push(weatherData.daily[i].weather[0].description);
                     }
                     
-                    var day = new Date(weatherData.current.dt*1000);
-                    
-                    var week = new Array("Sunday","Monday","Tuesday", "Wednesday","Thursday","Friday","Saturday" );
-                    flag=1;
-                    res.render("report",{flag:flag,city:city,day:day,week:week,currentData:currentData,
-                        mintemp:mintemp,maxtemp:maxtemp,humidity:humidity,pressure:pressure,icon:icon,description:description});
+                    day = new Date(weatherData.current.dt*1000);
+                    week = new Array("Sunday","Monday","Tuesday", "Wednesday","Thursday","Friday","Saturday" );
+                    /*res.render("report",{flag:flag,city:city,day:day,week:week,currentData:currentData,
+                        mintemp:mintemp,maxtemp:maxtemp,humidity:humidity,pressure:pressure,icon:icon,description:description});*/
+                        res.redirect("/city");
                 }).on('error', (e) => {
         console.error(`Got error: ${e.message}`);
       })})}
