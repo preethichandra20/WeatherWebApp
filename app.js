@@ -20,13 +20,16 @@ app.get("/city",function(req,res){
     res.render("report",{city:city,day:day,week:week,currentData:currentData,
         mintemp:mintemp,maxtemp:maxtemp,humidity:humidity,pressure:pressure,icon:icon,description:description})
 })
+app.get("/error",function(req,res){
+    res.render("error");
+})
 app.post("/",function(req,res){
     city=req.body.city;
     const url="http://api.positionstack.com/v1/forward?access_key="+key1+"&query="+city+"&limit=1&output=json";
     http.get(url,function(response){
         //console.log(response.statusCode);
         if(response.statusCode!=200){
-            res.render("error");
+            res.redirect("/error");
         }else{
         let rawData = '';
         response.on("data",function(chunk){
