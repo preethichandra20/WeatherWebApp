@@ -5,8 +5,8 @@ html,body{
 h1{
     text-align: center;
     color:whitesmoke;
-    letter-spacing:4px;
-    font-size:50px;
+    letter-spacing:2px;
+    font-size:40px;
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
 body{
@@ -56,9 +56,3 @@ body{
     margin-right: auto; 
     width: 50%;
 }
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .nextdata .row{
-        margin-left:10%;
-    }
-    }

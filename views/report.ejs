@@ -1,11 +1,11 @@
 <%- include("header") %>
 <body>
-    <div class="header"><h1><%= city[0].toUpperCase()+city.slice(1) %> Weather Forecast</h1></div>
+    <div class="header d-flex justify-content-center"><h1><%= city[0].toUpperCase()+city.slice(1) %> Weather Forecast</h1></div>
 <div class="container-fluid content-row d-flex justify-content-center">
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
             <div class="card text-center">
-            <div class="card-header"><h4><b>Today</b></h4></div>
+            <div class="card-header"><h5><b>Today</b></h5></div>
             <div class="card-body">
             <img src="<%= currentData.icon %>" alt="Icon">
             <p class="card-title" ><b><%= currentData.description[0].toUpperCase()+currentData.description.slice(1) %></b></p>
@@ -22,7 +22,7 @@
         <% for(var i=0;i<=5;i++){ %>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
                 <div class="card text-center">
-                <div class="card-header" ><h4><b><%= week[(day.getDay()+ i+1) % 7] %></b></h4></div>
+                <div class="card-header" ><h5><b><%= week[(day.getDay()+ i+1) % 7] %></b></h5></div>
                 <div class="card-body">
                 <img src="<%= icon[i] %>" alt="Icon">
                 <p class="card-title" ><b><%= description[i][0].toUpperCase()+description[i].slice(1)%></b></p>
