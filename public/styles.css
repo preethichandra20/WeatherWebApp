@@ -50,25 +50,15 @@ body{
   .header-right {
     float: right;
   }
-  @media (max-width:425px){
-    .nextdata .card{
-        margin-left:55%;
-    }
-}
-  @media (min-width:375px){
-      .nextdata .card{
-          margin-left:16%;
-      }
-  }
-
-  @media (max-width:320px){
-      .nextdata .card{
-          margin-left:10%;
-      }
-  }
 .card img{
     display: block;
     margin-left: auto;
     margin-right: auto; 
     width: 50%;
 }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .nextdata .row{
+        margin-left:10%;
+    }
+    }
