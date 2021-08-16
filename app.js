@@ -72,7 +72,7 @@ app.post("/",function(req,res){
                         icon:"http://openweathermap.org/img/wn/"+weatherData.daily[0].weather[0].icon+"@2x.png",
                         description:weatherData.daily[0].weather[0].description
                     }
-                    console.log(weatherData);
+                    //console.log(weatherData);
                     day2={
                         mintemp:weatherData.daily[1].temp.min,
                         maxtemp:weatherData.daily[1].temp.max,
