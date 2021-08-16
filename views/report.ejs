@@ -19,20 +19,79 @@
 </div>
 <div class="container-fluid content-row">
     <div class="row row1">
-        <% for(var i=0;i<=5;i++){ %>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
                 <div class="card text-center">
-                <div class="card-header" ><h5><b><%= week[(day.getDay()+ i+1) % 7] %></b></h5></div>
+                <div class="card-header" ><h5><b><%= week[(day.getDay()+1) % 7] %></b></h5></div>
                 <div class="card-body">
-                <img src="<%= icon[i] %>" alt="Icon">
-                <p class="card-title" ><b><%= description[i][0].toUpperCase()+description[i].slice(1)%></b></p>
-                <p class="card-text" ><b>Min Temp:</b><%= mintemp[i] %><span>&#8451;</span></p>
-                <p class="card-text" ><b>Max Temp:</b><%= maxtemp[i] %><span>&#8451;</span></p>
-                <p class="card-text" ><b>Pressure:</b><%= pressure[i] %>hPa</p>
-                </div>
+                <img src="<%= day1.icon %>" alt="Icon">
+                <p class="card-title" ><b><%= day1.description[0].toUpperCase()+day1.description.slice(1)%></b></p>
+                <p class="card-text" ><b>Min Temp:</b><%= day1.mintemp %><span>&#8451;</span></p>
+                <p class="card-text" ><b>Max Temp:</b><%= day1.maxtemp %><span>&#8451;</span></p>
+                <p class="card-text" ><b>Pressure:</b><%= day1.pressure %>hPa</p>
                 </div>
             </div>
-        <% } %>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                     <div class="card text-center">
+                    <div class="card-header" ><h5><b><%= week[(day.getDay()+2) % 7] %></b></h5></div>
+                    <div class="card-body">
+                    <img src="<%= day2.icon %>" alt="Icon">
+                    <p class="card-title" ><b><%= day2.description[0].toUpperCase()+day2.description.slice(1)%></b></p>
+                    <p class="card-text" ><b>Min Temp:</b><%= day2.mintemp %><span>&#8451;</span></p>
+                    <p class="card-text" ><b>Max Temp:</b><%= day2.maxtemp %><span>&#8451;</span></p>
+                    <p class="card-text" ><b>Pressure:</b><%= day2.pressure %>hPa</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                     <div class="card text-center">
+                        <div class="card-header" ><h5><b><%= week[(day.getDay()+3) % 7] %></b></h5></div>
+                        <div class="card-body">
+                        <img src="<%= day3.icon %>" alt="Icon">
+                        <p class="card-title" ><b><%= day3.description[0].toUpperCase()+day3.description.slice(1)%></b></p>
+                        <p class="card-text" ><b>Min Temp:</b><%= day3.mintemp %><span>&#8451;</span></p>
+                        <p class="card-text" ><b>Max Temp:</b><%= day3.maxtemp %><span>&#8451;</span></p>
+                        <p class="card-text" ><b>Pressure:</b><%= day3.pressure %>hPa</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                            <div class="card text-center">
+                            <div class="card-header" ><h5><b><%= week[(day.getDay()+4) % 7] %></b></h5></div>
+                            <div class="card-body">
+                            <img src="<%= day4.icon %>" alt="Icon">
+                            <p class="card-title" ><b><%= day4.description[0].toUpperCase()+day4.description.slice(1)%></b></p>
+                            <p class="card-text" ><b>Min Temp:</b><%= day4.mintemp %><span>&#8451;</span></p>
+                            <p class="card-text" ><b>Max Temp:</b><%= day4.maxtemp %><span>&#8451;</span></p>
+                            <p class="card-text" ><b>Pressure:</b><%= day4.pressure %>hPa</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                                <div class="card text-center">
+                                <div class="card-header" ><h5><b><%= week[(day.getDay()+5) % 7] %></b></h5></div>
+                                <div class="card-body">
+                                <img src="<%= day5.icon %>" alt="Icon">
+                                <p class="card-title" ><b><%= day5.description[0].toUpperCase()+day5.description.slice(1)%></b></p>
+                                <p class="card-text" ><b>Min Temp:</b><%= day5.mintemp %><span>&#8451;</span></p>
+                                <p class="card-text" ><b>Max Temp:</b><%= day5.maxtemp %><span>&#8451;</span></p>
+                                <p class="card-text" ><b>Pressure:</b><%= day5.pressure %>hPa</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                                    <div class="card text-center">
+                                    <div class="card-header" ><h5><b><%= week[(day.getDay()+6) % 7] %></b></h5></div>
+                                    <div class="card-body">
+                                    <img src="<%= day6.icon %>" alt="Icon">
+                                    <p class="card-title" ><b><%= day6.description[0].toUpperCase()+day6.description.slice(1)%></b></p>
+                                    <p class="card-text" ><b>Min Temp:</b><%= day6.mintemp %><span>&#8451;</span></p>
+                                    <p class="card-text" ><b>Max Temp:</b><%= day6.maxtemp %><span>&#8451;</span></p>
+                                    <p class="card-text" ><b>Pressure:</b><%= day6.pressure %>hPa</p>
+                                </div>
+                                </div>
+                        </div> 
+            </div>
     </div>
 </div>
 </body>
